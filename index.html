@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Satellite Constellation & Orbit Visualizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="header">
+    <h1>🛰️ Satellite Constellation & Orbit Optimization</h1>
+  </div>
+
+  <!-- CONTROLS PANEL — compact, corner-pinned, clear of the globe -->
+  <div id="controls-panel" class="panel">
+    <div class="panel-header">Constellation</div>
+
+    <div class="field">
+      <div class="row"><span>Altitude</span><span id="altVal">2.0</span></div>
+      <div class="control-row">
+        <input id="alt" type="range" min="0.3" max="6" step="0.1" value="2">
+        <input id="altNum" type="number" min="0.3" max="6" step="0.1" value="2">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="row"><span>Satellites</span><span id="satsVal">12</span></div>
+      <div class="control-row">
+        <input id="sats" type="range" min="1" max="60" step="1" value="12">
+        <input id="satsNum" type="number" min="1" max="60" step="1" value="12">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="row"><span>Planes</span><span id="planesVal">4</span></div>
+      <div class="control-row">
+        <input id="planes" type="range" min="1" max="10" step="1" value="4">
+        <input id="planesNum" type="number" min="1" max="10" step="1" value="4">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="row"><span>Inclination</span><span id="inclVal">55°</span></div>
+      <div class="control-row">
+        <input id="incl" type="range" min="0" max="180" step="1" value="55">
+        <input id="inclNum" type="number" min="0" max="180" step="1" value="55">
+      </div>
+    </div>
+
+    <div class="field">
+      <div class="row"><span>Earth Rotation Speed</span><span id="rotSpeedVal">1.0×</span></div>
+      <div class="control-row">
+        <input id="rotSpeed" type="range" min="0" max="3" step="0.05" value="1">
+        <input id="rotSpeedNum" type="number" min="0" max="3" step="0.05" value="1">
+      </div>
+    </div>
+
+    <div class="hint">Drag to orbit • Tap a satellite for details</div>
+  </div>
+
+  <!-- DETAILS PANEL — compact, corner-pinned, clear of the globe -->
+  <div id="details-panel" class="panel hidden">
+    <div class="panel-header">
+      Satellite
+      <button id="closeDetails" title="Close">✕</button>
+    </div>
+    <div id="details-content"></div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
